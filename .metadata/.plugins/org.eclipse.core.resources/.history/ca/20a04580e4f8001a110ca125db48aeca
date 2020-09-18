@@ -1,0 +1,15 @@
+package com.mitrais.psms.model.DataAccess;
+
+import com.mitrais.psms.model.DAO.StuffDao;
+import com.mitrais.psms.model.DB.DatasourceFactory;
+
+public abstract class DaoStuff implements StuffDao{
+
+	private DaoStuff() {
+		
+	}
+	
+	private static class SingletonHelper{
+		private static final DatasourceFactory INSTANCE = new DatasourceFactory();
+		}
+}

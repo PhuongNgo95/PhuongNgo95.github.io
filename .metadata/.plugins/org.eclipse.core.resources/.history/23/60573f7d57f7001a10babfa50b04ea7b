@@ -1,0 +1,11 @@
+package DAO;
+
+public class LoginDAO {
+
+	public static boolean Validate(String name, String pass) {
+		
+		if (name.equals("admin") && pass.equals("123")) {
+			
+		}
+	}
+}

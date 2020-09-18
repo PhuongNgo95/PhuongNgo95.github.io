@@ -1,0 +1,25 @@
+package com.mitrais.psms.model;
+
+public class Stuff {
+	protected int id;
+	protected String name;
+	protected String description;
+	protected int quantity;
+	protected String location;
+	
+	public Stuff() {
+		
+	}
+
+	public Stuff(int id) {
+		this.id = id;
+	}
+	
+	public Stuff(int id,String name,String description,int quantity,String location) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.quantity = quantity;
+		this.location = location;
+	}
+}

@@ -1,0 +1,20 @@
+package test1OOP;
+
+public class Circle extends Point{
+
+	protected double radius;
+	
+	public Circle() {
+		setRadius(0);
+	}
+
+	public Circle(double circleRadius, int xCoordinate, int yCoordinate) {
+		
+	}
+	
+	private void setRadius(double circleRadius) {
+		// TODO Auto-generated method stub
+		radius = ();
+	}
+	
+}

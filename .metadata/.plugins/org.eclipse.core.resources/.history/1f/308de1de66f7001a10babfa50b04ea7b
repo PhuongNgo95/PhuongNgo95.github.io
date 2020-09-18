@@ -1,0 +1,36 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import BEAN.ADmin;
+
+public class AccountAdminDAO {
+	public static List<ADmin> findAcccount(Connection conn, ADmin acc) throws Exception {
+
+		PreparedStatement ptmt = null;
+		
+		String sql = "select * from account_admin where username = ? and pass = ? ";
+
+		String uname = acc.getUsername();
+		String pass = acc.getPass();
+
+		try {
+			ptmt = conn.prepareStatement(sql);
+			ptmt.setString(1, uname);
+			ptmt.setString(2, pass);
+			
+			int kt = ptmt.executeUpdate();
+			
+			if (kt != 0) {
+				return null;
+			}
+			ptmt.close();
+		} catch (SQLException e) {
+			throw new Exception("SQL lỗi liên hệ với IT");
+		}
+		return null;
+	}
+}

@@ -1,0 +1,13 @@
+package DAO;
+
+import java.sql.Connection;
+import java.util.List;
+
+import BEAN.ADmin;
+
+public class AccountAdminDAO {
+	public static List<ADmin> findAll(Connection conn, ADmin acc) {
+		
+		return null;
+	}
+}

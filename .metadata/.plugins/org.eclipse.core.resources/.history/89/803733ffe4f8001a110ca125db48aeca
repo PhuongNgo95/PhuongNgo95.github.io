@@ -1,0 +1,18 @@
+package com.mitrais.psms.model.DataAccess;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public abstract class DaoStuff implements StuffDao {
+
+	private DaoStuff() {
+
+	}
+
+	public static DaoStuff getInstance() {
+		return SingletonHelper.INSTANCE;
+	}
+	private static class SingletonHelper {
+		private static final DaoStuff INSTANCE = new DaoStuff();
+	}
+}

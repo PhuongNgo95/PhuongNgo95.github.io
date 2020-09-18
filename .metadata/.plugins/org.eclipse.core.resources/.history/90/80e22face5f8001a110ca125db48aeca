@@ -1,0 +1,50 @@
+package com.mitrais.psms.model.DataAccess;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
+
+import com.mitrais.psms.model.Stuff;
+import com.mitrais.psms.model.DAO.StuffDao;
+
+public class DaoStuff implements StuffDao {
+
+	private DaoStuff() {
+
+	}
+
+	public static DaoStuff getInstance() {
+		return SingletonHelper.INSTANCE;
+	}
+	private static class SingletonHelper {
+		private static final DaoStuff INSTANCE = new DaoStuff();
+	}
+	public Optional<Stuff> find(String id) throws SQLException {
+
+		String sql = "select stuff_id, from user where stuff_id = ?";
+
+		
+		return null;
+	}
+
+	public List<Stuff> findAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean save(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean update(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delete(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

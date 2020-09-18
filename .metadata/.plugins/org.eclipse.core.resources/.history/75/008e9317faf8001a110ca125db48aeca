@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>PhoneNumber</th>
+		</tr>
+			<tr>
+			<c:forEach items="${ListUsers}" var="ListUsers">
+				<td><input type="text" name ="Name" value= "<c:out value= '${ListUsers.name}'/>"></td>
+				<td><input type="text" name="Email" value="<%=request.getAttribute("Email")%>"></td>
+				<td><input type="text" name="PhoneNumber" value="<%=request.getAttribute("PhoneNumber")%>"></td>
+				<td>
+					<form action="InsertController" method="POST">
+						<input type="submit" name="Insert">
+					</form>
+				</td>
+			</c:forEach>
+			</tr>
+	</table>
+</body>
+</html>

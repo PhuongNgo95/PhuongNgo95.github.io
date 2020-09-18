@@ -1,0 +1,7 @@
+package BEAN;
+
+public class ADmin {
+
+	private String username;
+	private String pass;
+}

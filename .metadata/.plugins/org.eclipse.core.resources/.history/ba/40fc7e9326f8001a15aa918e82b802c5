@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Personal Management System</title>
+</head>
+<body>
+
+	<h1><%= request.getAttribute("msg1") != null?request.getAttribute("msg1"):"" %></h1>
+	<form action="UserManagementHomeController" method="POST">
+	<table border="1">
+		<tr>
+			<th>
+				Id
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				PhoneNumber
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+	<c:forEach items="${listUser}" var="listUser">
+		<tr>
+			<td>
+				${listUser.id}
+			</td>
+			<td>
+				${listUser.name}
+			</td>
+			<td>
+				${listUser.email}
+			</td>
+			<td>
+				${listUser.phoneNumber}
+			</td>
+			<td>
+				<input type="submit" name=${listUser.id}>
+				<input type="submit" value="delete">
+			</td>
+		</tr>
+	</c:forEach>
+	</table>
+	</form>
+</body>
+</html>

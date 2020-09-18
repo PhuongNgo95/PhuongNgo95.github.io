@@ -1,0 +1,5 @@
+package com.mitrais.psms.model.DataAccess;
+
+public class DaoStuff {
+
+}

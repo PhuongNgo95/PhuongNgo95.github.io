@@ -1,0 +1,15 @@
+package DAO;
+
+import java.sql.Connection;
+
+import BEAN.ADmin;
+
+public class AccountAdminDAO {
+	public static boolean Validate(Connection name, ADmin acc) {
+		boolean t = false;
+		if (name.equals("admin") && pass.equals("123")) {
+			t = true;
+		}
+		return t;
+	}
+}

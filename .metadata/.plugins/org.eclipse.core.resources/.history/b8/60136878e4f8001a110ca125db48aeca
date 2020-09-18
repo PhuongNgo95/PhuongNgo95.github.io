@@ -1,0 +1,10 @@
+package com.mitrais.psms.model.DataAccess;
+
+import com.mitrais.psms.model.DAO.StuffDao;
+
+public abstract class DaoStuff implements StuffDao{
+
+	private DaoStuff() {
+		
+	}
+}

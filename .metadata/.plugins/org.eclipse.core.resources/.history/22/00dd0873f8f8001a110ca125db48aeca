@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>PhoneNumber</th>
+		</tr>
+			<tr>
+				<td><input type="text" name="Name" value="${ListUsers.name}"></td>
+				<td><input type="text" name="Email" value="<%=request.getAttribute("Email")%>"></td>
+				<td><input type="text" name="PhoneNumber" value="<%=request.getAttribute("PhoneNumber")%>"></td>
+				<td>
+					<form action="InsertController" method="POST">
+						<input type="submit" name="Insert">
+					</form>
+				</td>
+			</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,12 @@
+package com.mitrais.psms.model.DAO;
+
+import java.util.logging.Logger;
+
+import javax.sql.DataSource;
+
+
+public class DatasourceFactory {
+
+	private final DataSource daso;
+	private static final Logger LOGGER = Logger.getLogger(DatasourceFactory.class.getName())
+}

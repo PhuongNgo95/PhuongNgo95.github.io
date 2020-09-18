@@ -1,0 +1,24 @@
+INDEX VERSION 1.4+C:\Users\MSI-GAMING\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3006703321.index
+3663301251.index
+708835171.index
+2730531055.index
+1366101982.index
+1867702216.index
+1197861341.index
+2934513029.index
+1560547319.index
+1982360279.index
+644497224.index
+3277607510.index
+1135211220.index
+2046447320.index
+404427863.index
+760361850.index
+2380175872.index
+3291584079.index
+3188232076.index
+3910939678.index
+1193853178.index
+3619261839.index
+3271193799.index

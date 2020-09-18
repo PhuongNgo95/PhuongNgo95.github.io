@@ -1,0 +1,9 @@
+package com.mitrais.psms.model;
+
+public class Stuff {
+	protected int id;
+	protected String name;
+	protected String description;
+	protected int quantity;
+	protected String location;
+}

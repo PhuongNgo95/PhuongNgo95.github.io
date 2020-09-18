@@ -1,0 +1,13 @@
+package DAO;
+
+import BEAN.ADmin;
+
+public class AccountAdminDAO {
+	public static boolean Validate(String name, ADmin acc) {
+		boolean t = false;
+		if (name.equals("admin") && pass.equals("123")) {
+			t = true;
+		}
+		return t;
+	}
+}

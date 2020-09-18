@@ -1,0 +1,68 @@
+package com.mitrais.psms.model.DataAccess;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import com.mitrais.psms.model.Stuff;
+import com.mitrais.psms.model.DAO.StuffDao;
+import com.mitrais.psms.model.DB.DatasourceFactory;
+
+public class DaoStuff implements StuffDao {
+
+	private DaoStuff() {
+
+	}
+
+	public static DaoStuff getInstance() {
+		return SingletonHelper.INSTANCE;
+	}
+
+	private static class SingletonHelper {
+		private static final DaoStuff INSTANCE = new DaoStuff();
+	}
+
+	public Optional<Stuff> find(String id) throws SQLException {
+
+		Connection conn = DatasourceFactory.getConnection();
+		String sql = "select stuff_id, name, description, quantity, location from stuff where stuff_id = ?";
+
+		PreparedStatement ptmt = conn.prepareStatement(sql);
+		ptmt.setString(1, id);
+		ResultSet resultSet = ptmt.executeQuery();
+
+		if (resultSet.next()) {
+			return Optional.of(new Stuff(resultSet.getInt("stuff_id"), resultSet.getString("name"),
+					resultSet.getString("description"), resultSet.getInt("quantity"), resultSet.getString("location")));
+		}
+		return null;
+	}
+
+	public List<Stuff> findAll() throws SQLException {
+		List<Stuff> list = new ArrayList<Stuff>();
+		String sql = "select stuff_id, name, description, quantity, location from stuff";
+		Connection conn = DatasourceFactory.getConnection();
+		PreparedStatement ptmt = conn.prepareStatement(sql);
+		
+		return null;
+	}
+
+	public boolean save(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean update(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delete(Stuff o) throws SQLException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

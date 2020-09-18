@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DatasourceFactory.java&apos; to &apos;PSMS/src/main/java/com.mitrais.psms.model.DB&apos;&#x0D;&#x0A;- Original project: &apos;PSMS&apos;&#x0D;&#x0A;- Destination element: &apos;PSMS/src/main/java/com.mitrais.psms.model.DB&apos;&#x0D;&#x0A;- Original element: &apos;com.mitrais.psms.model.DAO.DatasourceFactory.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.mitrais.psms.model.DB" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.mitrais.psms.model.DAO{DatasourceFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1600273489708" units="1" version="1.0"/>
+</session>

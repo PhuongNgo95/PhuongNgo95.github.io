@@ -1,0 +1,93 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import BEAN.Users;
+import DB.DBconnection;
+
+public class UserDAO {
+	public static List<Users> findAllUser() throws Exception{
+		Connection conn = DBconnection.DBconnection();
+		PreparedStatement ptmt = null;
+		List<Users> list = new ArrayList<Users>();
+
+		String sql = "select * from user";
+
+//		try {
+			ptmt = conn.prepareStatement(sql);
+			ResultSet rs = ptmt.executeQuery();
+
+			while (rs.next()) {
+				Users users = new Users();
+				users.setId(rs.getInt("id"));
+				users.setName(rs.getString("name"));
+				users.setEmail(rs.getString("email"));
+				users.setPhoneNumber(rs.getString("phoneNumber"));
+				list.add(users);
+			}
+			ptmt.close();
+//		} catch (SQLException e) {
+//			throw new Exception("SQLException");
+//		}
+		return list;
+	}
+
+	public static boolean insertUser(Users users) throws Exception{
+		Connection conn = DBconnection.DBconnection();
+		PreparedStatement ptmt = null;
+
+		boolean rowInserted = false;
+		String sql = "insert into user (name, email, phoneNumber) VALUES (?, ?, ?) ";
+
+//		try {
+			ptmt = conn.prepareStatement(sql);
+			ptmt.setString(1, users.getName());
+			ptmt.setString(2, users.getEmail());
+			ptmt.setString(3, users.getPhoneNumber());
+			rowInserted = ptmt.executeUpdate() > 0;
+			ptmt.close();
+//		} catch (SQLException e) {
+//			throw new Exception("SQLException");
+//		}
+		return rowInserted;
+	}
+	
+	public static boolean updateUser(Users users) throws Exception{
+		Connection conn = DBconnection.DBconnection();
+		PreparedStatement ptmt = null;
+
+		boolean rowUpdateted = false;
+		String sql = "update user set name = ?, email = ?, phoneNumber = ? where id = ? ";
+
+			ptmt = conn.prepareStatement(sql);
+			ptmt.setString(1, users.getName());
+			ptmt.setString(2, users.getEmail());
+			ptmt.setString(3, users.getPhoneNumber());
+			ptmt.setInt(4, users.getId());
+			rowUpdateted = ptmt.executeUpdate() > 0;
+			ptmt.close();
+		return rowUpdateted;
+	}
+	
+	public static boolean deleteUser(Users users) throws Exception{
+		Connection conn = DBconnection.DBconnection();
+		PreparedStatement ptmt = null;
+
+		boolean rowDeleted = false;
+		String sql = "delete from user where id = ? ";
+
+			ptmt = conn.prepareStatement(sql);
+			ptmt.setString(1, users.getName());
+			ptmt.setString(2, users.getEmail());
+			ptmt.setString(3, users.getPhoneNumber());
+			ptmt.setInt(4, users.getId());
+			rowDeleted = ptmt.executeUpdate() > 0;
+			ptmt.close();
+		return rowDeleted;
+	}
+}

@@ -1,0 +1,26 @@
+package com.mitrais.psms.model.DAO;
+
+import java.util.Objects;
+import java.util.logging.Logger;
+
+import javax.sql.DataSource;
+
+import com.mysql.jdbc.MySQLConnection;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
+
+public class DatasourceFactory {
+
+	private final DataSource dataSource;
+	private static final Logger LOGGER = Logger.getLogger(DatasourceFactory.class.getName());
+	public DatasourceFactory() {
+		MysqlDataSource dataSource = new MysqlDataSource();
+		
+		dataSource.setDatabaseName("psmsdb");
+		dataSource.setServerName("localhost");
+		dataSource.setPort(3306);
+		dataSource.setUser("root");
+		dataSource.setPassword("Anhphuong36!");
+		
+	}
+}

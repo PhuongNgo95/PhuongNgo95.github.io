@@ -4,6 +4,8 @@ public class ADmin {
 
 	private String username;
 	private String pass;
+
+	private String luan;
 	public String getUsername() {
 		return username;
 	}
